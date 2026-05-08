@@ -283,7 +283,7 @@ def admin_users(call):
             bot.send_message(call.message.chat.id, text, parse_mode="Markdown")
             text = ""
     if text:
-        bot.edit_message_text(text, call.message.chat.id, call.message.message_id, parse_mode="Markdown")
+        bot.edit_message_text(text, call.message.chat.id, call.message.message_id, parse_mode=None)
     keyboard = InlineKeyboardMarkup()
     keyboard.add(InlineKeyboardButton("◀️ Назад", callback_data="admin_back"))
     bot.send_message(call.message.chat.id, "🔙", reply_markup=keyboard)
